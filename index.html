@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: #ce0033;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        form div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color:black;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #ce0033;
+            outline: none;
+        }
+
+        .error-message {
+            color: #ce0033;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #ce0033;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #b2002b;
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm" action="#" method="POST" onsubmit="return validateForm()">
+        <h2>Formulaire d'inscription</h2>
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom">
+            <span class="error-message" id="error-nom"></span>
+        </div>
+        <div>
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom">
+            <span class="error-message" id="error-prenom"></span>
+        </div>
+        <div>
+            <label for="email">Adresse email :</label>
+            <input type="text" id="email" name="email">
+            <span class="error-message" id="error-email"></span>
+        </div>
+        <div>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password">
+            <span class="error-message" id="error-password"></span>
+        </div>
+        <div>
+            <button type="submit">Soumettre</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
