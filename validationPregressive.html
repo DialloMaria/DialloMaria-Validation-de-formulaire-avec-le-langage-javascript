@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire d'inscription</title>
+    <title>Formulaire d'inscription progressif</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -37,7 +37,7 @@
         label {
             display: block;
             margin-bottom: 8px;
-            color:black;
+            color: black;
             font-weight: bold;
         }
 
@@ -65,6 +65,14 @@
             margin-top: 5px;
         }
 
+        .valid {
+            border-color: green;
+        }
+
+        .invalid {
+            border-color: red;
+        }
+
         button {
             background-color: #ce0033;
             color: #fff;
@@ -81,35 +89,39 @@
         button:hover {
             background-color: #b2002b;
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <form id="registrationForm" action="#" method="POST" onsubmit="return validateForm()">
         <h2>Formulaire d'inscription</h2>
-        <div>
+        <div id="step-1">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom">
             <span class="error-message" id="error-nom"></span>
         </div>
-        <div>
+        <div id="step-2" class="hidden">
             <label for="prenom">Prénom :</label>
             <input type="text" id="prenom" name="prenom">
             <span class="error-message" id="error-prenom"></span>
         </div>
-        <div>
+        <div id="step-3" class="hidden">
             <label for="email">Adresse email :</label>
             <input type="text" id="email" name="email">
             <span class="error-message" id="error-email"></span>
         </div>
-        <div>
+        <div id="step-4" class="hidden">
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password">
             <span class="error-message" id="error-password"></span>
         </div>
-        <div>
+        <div id="submit-button" class="hidden">
             <button type="submit">Soumettre</button>
         </div>
     </form>
-    <script src="validation.js"></script>
+    <script src="ValidationProgressive.js"></script>
 </body>
 </html>
